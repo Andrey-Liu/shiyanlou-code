@@ -10,7 +10,7 @@ def issues(repo):
     issues_df2 = pd.DataFrame(raw.json()).loc[ : , 'user']
     issues_df = issues_df1.loc[:, ('number', 'title','user_name')]
     for i in range(0,30):
-        issues_df.loc[i,'user_name']= pd.Series(issues_df2.loc[i,])['login']
+        issues_df.loc[i,'user_name']= issues_df2.loc[i,]['login']
 
     return issues_df
 
